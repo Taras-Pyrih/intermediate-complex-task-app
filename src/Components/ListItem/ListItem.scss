@@ -1,0 +1,30 @@
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 650px 10px 40px;
+  border-bottom: 1px solid #000000;
+  background: cadetblue;
+
+  &:first-child {
+    border-top: 1px solid #000000;    
+  }
+
+  &.postIsPublished {
+    text-decoration: line-through;
+    background: brown;
+    order: 1;
+  }
+
+  p {
+    font-weight: bold;
+
+    span:first-child {
+      color: darkslategrey;
+      font-style: italic;
+    }
+
+    span:last-child {
+      text-transform: capitalize;
+    }
+  }
+}
