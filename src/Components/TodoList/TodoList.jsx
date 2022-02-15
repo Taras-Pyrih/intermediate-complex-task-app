@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ListItem } from '../ListItem/ListItem.jsx';
+import { v4 as uuidv4 } from 'uuid';
 import './TodoList.scss';
 
 export const TodoList = () => {
@@ -23,7 +24,7 @@ export const TodoList = () => {
       item.done = false;
     }
 
-    return <ListItem obj={item} postIndex={index} onChangeDone={handleChangeDone}/>;
+    return <ListItem obj={item} postIndex={index} onChangeDone={handleChangeDone} key={uuidv4()}/>;
   });
 
   return (

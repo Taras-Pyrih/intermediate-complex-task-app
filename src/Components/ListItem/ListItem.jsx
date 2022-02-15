@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import { v4 as uuidv4 } from 'uuid';
 import './ListItem.scss';
 
 export const ListItem = props => {
@@ -13,7 +12,7 @@ export const ListItem = props => {
   }
 
   return (
-    <li className={liClass} key={uuidv4()}>
+    <li className={liClass}>
       <p>
         <span>{props.obj.id}. </span>
         <span>{props.obj.title}</span>
