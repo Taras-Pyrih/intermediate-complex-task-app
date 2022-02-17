@@ -1,8 +1,10 @@
 .TodoList {
+  min-height: 100vh;
+  background: cadetblue;
+
   h1 {
     padding: 20px 50px 20px 40px;
     text-align: center;
-    background: cadetblue;
   }
 
   ul {

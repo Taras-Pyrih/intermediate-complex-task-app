@@ -1,8 +1,59 @@
 .RegistrationForm {
-  height: 100vh;
-  padding-top: 10px;
+  min-height: 100vh;
   background:darkkhaki;
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
+
+  h1 {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    border: 1px solid #000000;
+    margin: auto;
+    background: burlywood;
+    
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-top: 20px;
+  
+      .input-container {
+        label {
+          font-size: 0.9em;
+          font-style: italic;
+          padding-left: 20px;
+        }
+
+        div:last-child {
+          position: relative;
+
+          input, textarea {
+            padding: 5px 20px;
+          }
+
+          .notification {
+            position: absolute;
+            left: 20px;
+            bottom: -20px;
+            color:crimson;
+            display: none;
+
+            &.show {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    input[type="submit"] {
+      padding: 5px 10px;
+      margin: 10px 0;
+    }
+  }
 }
