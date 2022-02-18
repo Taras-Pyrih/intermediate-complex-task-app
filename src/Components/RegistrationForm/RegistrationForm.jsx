@@ -1,20 +1,16 @@
+import { textPattern, emailPattern, telPattern, numberPattern } from '../../Consts/Consts.jsx';
 import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import './RegistrationForm.scss';
 
 export const RegistrationForm = () => {
-  const textPattern = /^[a-zA-Z]+$/;
-  const emailPattern = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-  const telPattern = /^\+38([ -]?)\(?([0-9]{3})\)?([ -]?)([0-9]{3})([ -]?)([0-9]{2})([ -]?)([0-9]{2})$/;
-  const numberPattern = /^\d+$/;
-
   const [firstName, setFirstName] = useState({name: 'firstName', enteredValue: '', isValid: true});
   const [secondName, setSecondName] = useState({name: 'secondName', enteredValue: '', isValid: true});
   const [email, setEmail] = useState({name: 'email', enteredValue: '', isValid: true});
   const [phoneNumber, setPhoneNumber] = useState({name: 'phoneNumber', enteredValue: '', isValid: true});
   const [personalId, setPersonalId] = useState({name: 'personalId', enteredValue: '', isValid: true});
   const [description, setDescription] = useState({name: 'description', enteredValue: '', isValid: true});
-  const [formIsValid, setFormIsValid] = useState(false);
+  const [formIsValid, setFormIsValid] = useState(true);
   const [activeSubmitButton, setActiveSubmitButton] = useState(false);
   
   const inputStateVariables = [
@@ -28,13 +24,17 @@ export const RegistrationForm = () => {
 
   useEffect(() => {
     setFormIsValid(true);
+    setActiveSubmitButton(false);
     
     inputStateVariables.map(inputStateVariable => {
-      if (!inputStateVariable.isValid){
+      if (!inputStateVariable.isValid) {
         setFormIsValid(false);
       }
+      if (inputStateVariable.enteredValue !== "") {
+        setActiveSubmitButton(true);
+      }
     });
-  }, [firstName.isValid, secondName.isValid, email.isValid, phoneNumber.isValid, personalId.isValid, description.isValid]);
+  }, [firstName, secondName, email, phoneNumber, personalId, description]);
 
   const changeValue = e => {
     const name = e.target.name;
@@ -116,7 +116,7 @@ export const RegistrationForm = () => {
 
       console.log(output);
     }
-  }
+  };
   
   return (
     <div className="RegistrationForm">
@@ -218,7 +218,7 @@ export const RegistrationForm = () => {
           </div>
         </div>
 
-        {activeSubmitButton ? <input type="submit" value="Зареєструвати"/>: <input type="submit" disabled value="Зареєструвати"/>}
+        {activeSubmitButton ? <input type="submit" value="Зареєструвати"/> : <input type="submit" value="Зареєструвати" disabled/>}
       </form>
     </div>
   );
