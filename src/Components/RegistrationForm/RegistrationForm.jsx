@@ -24,14 +24,22 @@ export const RegistrationForm = () => {
 
   useEffect(() => {
     setFormIsValid(true);
-    setActiveSubmitButton(false);
     
-    inputStateVariables.map(inputStateVariable => {
+    inputStateVariables.find(inputStateVariable => {
       if (!inputStateVariable.isValid) {
         setFormIsValid(false);
+
+        return true;
       }
+    });
+
+    setActiveSubmitButton(false);
+
+    inputStateVariables.find(inputStateVariable => {
       if (inputStateVariable.enteredValue !== "") {
         setActiveSubmitButton(true);
+
+        return true;
       }
     });
   }, [firstName, secondName, email, phoneNumber, personalId, description]);
