@@ -1,0 +1,79 @@
+.FormikForm {
+  min-height: 100vh;
+  background:darkkhaki;
+
+  h1 {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    border: 1px solid #000000;
+    margin: auto;
+    background: burlywood;
+    
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-top: 20px;
+  
+      .input-container {
+        position: relative;
+
+        label {
+          font-size: 0.9em;
+          font-style: italic;
+          padding-left: 20px;
+        }
+
+        div {
+          position: relative;
+
+          input, textarea {
+            padding: 5px 20px;
+            border-width: 1px;
+            border-radius: 5px;
+            font-family: Arial;
+          }
+
+          .notification {
+            position: absolute;
+            left: 20px;
+            top: 30px;
+            color:crimson;
+
+            &.textarea-notification {
+              top: 45px;
+            }
+          }
+        }
+
+        input[type="checkbox"] + label {
+          padding-left: 10px;
+        }
+
+        .agreement-notification {
+          display: none;
+          position: absolute;
+          left: 22.5px;
+          top: 17.5px;
+          color:crimson;
+
+          &.visible {
+            display: block;
+          }
+        }
+      }
+    }
+
+    input[type="submit"] {
+      padding: 5px 10px;
+      margin: 25px 0 10px;
+    }
+  }
+}
