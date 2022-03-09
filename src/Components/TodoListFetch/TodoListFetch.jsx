@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { ListItem } from '../ListItem/ListItem.jsx';
 import { v4 as uuidv4 } from 'uuid';
-import './TodoList.scss';
+import './TodoListFetch.scss';
 
-export const TodoList = () => {
+export const TodoListFetch = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export const TodoList = () => {
   });
 
   return (
-    <div className="TodoList">
+    <div className="TodoListFetch">
       <h1>Список постів:</h1>
       {
         postList.length != 0 &&

@@ -5,7 +5,7 @@ export const Message = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate('/todo-list')
+    navigate('/todo-list-fetch')
   }, []);
 
   return null;
