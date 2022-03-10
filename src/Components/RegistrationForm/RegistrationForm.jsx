@@ -1,4 +1,4 @@
-import { textPattern, emailPattern, telPattern, numberPattern } from '../../Consts/Consts.jsx';
+import { textPattern, emailPattern, telPattern, numberPattern } from '../../consts/consts.jsx';
 import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import './RegistrationForm.scss';

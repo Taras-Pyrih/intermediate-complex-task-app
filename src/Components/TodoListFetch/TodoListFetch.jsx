@@ -17,7 +17,7 @@ export const TodoListFetch = () => {
 
     newPosts[index].done = !newPosts[index].done;
     setPosts(newPosts);
-  }
+  };
 
   const postList = posts.map((item, index) => {
     if (!item.done) {
@@ -38,4 +38,4 @@ export const TodoListFetch = () => {
       }
     </div>
   );
-}
+};

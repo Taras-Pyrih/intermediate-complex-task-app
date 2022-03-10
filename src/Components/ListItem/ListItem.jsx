@@ -9,7 +9,7 @@ export const ListItem = props => {
 
   const handleClick = () => {
     props.onChangeDone(props.postIndex);
-  }
+  };
 
   return (
     <li className={liClass}>
@@ -20,4 +20,4 @@ export const ListItem = props => {
       <button onClick={handleClick}>Done</button>
     </li>
   );
-}
+};

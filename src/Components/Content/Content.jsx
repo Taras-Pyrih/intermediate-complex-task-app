@@ -18,4 +18,4 @@ export const Content = () => {
       </Routes>
     </div>
   );
-}
+};
